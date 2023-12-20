@@ -52,7 +52,6 @@ function updateData(id, label, category, priority) {
 function deleteData(id) {
     const json = fs.readFileSync('./storage.json');
     const arr = JSON.parse(json);
-
     const filt = arr.filter(el => el.id != id)
     fs.writeFileSync('./storage.json', JSON.stringify(filt))
     return filt
